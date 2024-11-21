@@ -87,7 +87,7 @@ Aktuell werden die folgenden Controller unterstützt. Wenn Sie eine Controllerva
 Laden Sie das [neueste Release](https://github.com/ndeadly/MissionControl/releases) .zip herunter und entpacken Sie es im Stammverzeichnis Ihrer SD-Karte, wobei die Ordner fusionieren und vorhandene Dateien überschrieben werden. Starten Sie Ihre Konsole neu, um das Modul zu aktivieren, und Sie sind fertig!
 
 ***IMPORTANT: 
-Atmosphère >= 1.7.1 is required to run the latest release of Mission Control on firmware 18.1.0. Using an older Atmosphère version will cause Mission Control to crash or freeze the system on boot.***
+Atmosphère >= 1.8.0 is required to run the latest release of Mission Control on firmware 19.0.0. Using an older Atmosphère version will cause Mission Control to crash or freeze the system on boot.***
 
 ### Verwendung
 
