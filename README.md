@@ -293,32 +293,33 @@ Der `btm`-Dienst wird jetzt ebenfalls als MITM verwendet, was es ermöglicht, Co
 
 ### Aus dem Quellcode bauen
 
-Klone zuerst das Repository auf deinen lokalen Rechner und wechsle in das neu geklonte Verzeichnis
+Als erstes muss das Repository auf den lokalen Rechner geklont und in das neu erstellte Verzeichnis gewechselt werden:
 ```
 git clone --recurse-submodules https://github.com/ndeadly/MissionControl.git
 cd MissionControl
 ```
 
-~~Mission Control verwendet derzeit einen benutzerdefinierten Fork von `libnx`, der Bluetooth-Service-Wrapper und Typdefinitionen hinzufügt.~~ Offizielles libnx-Master wird jetzt verwendet, um Mission Control zu bauen. Zum Zeitpunkt des Schreibens kann das von devkitPro verteilte libnx verwendet werden, ohne dass du es selbst bauen musst. Dies kann sich ändern, wenn `Atmosphere-libs` aktualisiert wird, um bleeding-edge `libnx`-Commits zu verwenden, die im offiziellen Release nicht enthalten sind. In jedem Fall kannst du das enthaltene `libnx`-Submodul mit den folgenden Befehlen aus dem Quellcode bauen.
+Mission Control verwendet jetzt den offiziellen libnx Master zum Bauen. Zum aktuellen Zeitpunkt kann das von devkitPro verteilte libnx ohne eigenes Bauen verwendet werden. Dies könnte sich ändern, falls `Atmosphere-libs` auf neuere `libnx` Commits aktualisiert wird, die noch nicht im offiziellen Release enthalten sind. In jedem Fall kann das enthaltene `libnx` Submodul mit folgenden Befehlen aus dem Quellcode gebaut werden:
 
 ```
 cd lib/libnx
 make && make install
 ```
 
-Baue als nächstes `libstratosphere`. Wenn du auf Buildfehler stößt, fehlen möglicherweise benötigte Abhängigkeiten (siehe https://github.com/Atmosphere-NX/Atmosphere/blob/master/docs/building.md)
+Als nächstes wird `libstratosphere` gebaut. Bei Build-Fehlern könnten erforderliche Abhängigkeiten fehlen (siehe https://github.com/Atmosphere-NX/Atmosphere/blob/master/docs/building.md):
 ```
 cd ../Atmosphere-libs/libstratosphere
 make
 ```
 
-Baue und paketiere schließlich die Distributions-ZIP-Datei. Dabei wird das `mc.mitm`-Sysmodul gebaut und mit Bluetooth-Exefs-Patches verpackt.
+Zum Schluss wird die Distributions-ZIP-Datei gebaut und gepackt. Dabei wird das `mc.mitm` Sysmodul gebaut und mit den Bluetooth exefs Patches zusammengepackt:
 ```
 cd ../..
 make dist
 ```
 
 Das resultierende Paket kann wie oben beschrieben installiert werden.
+
 
 
 ### Credits
